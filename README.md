@@ -1,6 +1,12 @@
-# Messari CLI
+# Messari Subgraph CLI
 
 A CLI for messari subgraph development. This CLI serves as a wrapper around the [graph-cli] as is relies on the [graph-cli] to codegen, build, and deploy subgraphs. This CLI is built using the gluegun framework just like the [graph-cli].
+
+**See Messari Subgraphs Repo:**
+https://github.com/messari/subgraphs
+
+**More on Messari Subgraph workflow with Subgraph CLI:**
+https://github.com/messari/subgraphs#:~:text=Video%20Walkthrough%20Series%20of%20Subgraph%20Development%20Workflow%20for%20Messari
 
 **See Graph CLI:** 
 https://github.com/graphprotocol/graph-cli
