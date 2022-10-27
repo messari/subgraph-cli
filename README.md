@@ -2,6 +2,9 @@
 
 A CLI for messari subgraph development. This CLI serves as a wrapper around the [graph-cli] as is relies on the [graph-cli] to codegen, build, and deploy subgraphs. This CLI is built using the gluegun framework just like the [graph-cli].
 
+**See Graph CLI:** 
+https://github.com/graphprotocol/graph-cli
+
 ## Customizing your CLI (Gluegun Documentation)
 
 Check out the documentation at https://github.com/infinitered/gluegun/tree/master/docs and https://infinitered.github.io/gluegun/#/?id=quick-start.
