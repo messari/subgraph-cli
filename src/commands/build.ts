@@ -114,7 +114,7 @@ module.exports = {
       type: 'select',
       name: 'service',
       message: 'Choose a service:',
-      choices: ['subgraph-studio', 'hosted-service', 'cronos-portal'],
+      choices: ['hosted-service', 'subgraph-studio', 'cronos-portal'],
       skip: !deploy,
     }
 
