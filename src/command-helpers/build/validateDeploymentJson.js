@@ -38,6 +38,7 @@ function checkSchemaPresentAndValid(protocol, protocolData) {
       'lending',
       'yield-aggregator',
       'dex-amm',
+      'dex-aggregator',
       'network',
       'governance',
       'generic',
