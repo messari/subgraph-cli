@@ -46,6 +46,8 @@ function checkSchemaPresentAndValid(protocol, protocolData) {
       'erc20',
       'nft-marketplace',
       'bridge',
+      'derivatives-perpfutures',
+      'derivatives-options',
     ].includes(protocolData.schema)
   ) {
     throw new Error(
