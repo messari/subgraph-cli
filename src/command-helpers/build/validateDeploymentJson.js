@@ -263,9 +263,10 @@ function checkDuplicateIDs(deploymentJsonMap) {
 }
 
 function checkProtocolArgumentCount(protocol, protocolData) {
-  if (Object.keys(protocolData).length !== 5) {
+  const requiredKeys = ['schema', 'base', 'protocol', 'deployments']
+  if (!requiredKeys.every((key) => Object.keys(protocolData).includes(key))) {
     throw new Error(
-      `Invalid number of arguments for protocol: ${protocol} - must have 4 arguments: schema, base, protocol, deployments, project`
+      `Invalid arguments for protocol: ${protocol} - schema, base, protocol and deployments must be included`
     )
   }
 }
