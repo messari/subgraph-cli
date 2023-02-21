@@ -1,6 +1,6 @@
 {
   "name": "messari-subgraph-cli",
-  "version": "0.1.46",
+  "version": "0.1.48",
   "description": "A CLI for Messari Subgraph development.",
   "types": "build/types/types.d.ts",
   "bin": {
@@ -22,6 +22,7 @@
   "dependencies": {
     "@types/node": "^12.7.11",
     "gluegun": "^5.1.2",
+    "messari-subgraph-cli": "^0.1.47",
     "mustache": "^4.2.0",
     "ts-jest": "^26.5.3",
     "ts-node": "^10.9.1",
