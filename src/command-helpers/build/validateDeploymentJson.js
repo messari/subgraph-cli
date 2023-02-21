@@ -262,9 +262,10 @@ function checkDuplicateIDs(deploymentJsonMap) {
   }
 }
 
-function checkProtocolArgumentCount(protocol, protocolData) {
+function checkProtocolArguments(protocol, protocolData) {
   const requiredKeys = ['schema', 'base', 'protocol', 'deployments']
-  if (!requiredKeys.every((key) => Object.keys(protocolData).includes(key))) {
+  const presentedKeys = Object.keys(protocolData)
+  if (!requiredKeys.every((key) => presentedKeys.includes(key))) {
     throw new Error(
       `Invalid arguments for protocol: ${protocol} - schema, base, protocol and deployments must be included`
     )
@@ -296,7 +297,7 @@ function validateDeploymentJson(deploymentJsonMap) {
     checkBasePresent(protocol, protocolData)
     checkProtocolPresent(protocol, protocolData)
     checkDeploymentsPresent(protocol, protocolData)
-    checkProtocolArgumentCount(protocol, protocolData)
+    checkProtocolArguments(protocol, protocolData)
 
     for (const [deployment, deploymentData] of Object.entries(
       protocolData.deployments
