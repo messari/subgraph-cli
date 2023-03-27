@@ -25,6 +25,8 @@ const networks = new Set([
   'osmosis',
   'polygon',
   'gnosis',
+  'base-testnet',
+  'zksync-era',
 ])
 
 function checkSchemaPresentAndValid(protocol, protocolData) {
