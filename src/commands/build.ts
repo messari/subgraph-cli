@@ -135,7 +135,7 @@ module.exports = {
       service = (await toolbox.prompt.ask(askService)).service
     }
 
-    if (target === undefined) {
+    if (target === undefined && service != 'subgraph-studio') {
       target = (await toolbox.prompt.ask(askTarget)).target
     }
 
@@ -172,7 +172,12 @@ module.exports = {
       return
     }
 
-    let Executor = new ExecutorClass(
+    if (scriptGenerator.deployments.length == 0) {
+      console.log(`No deployments found for ${id} on ${service}. Please check your arguments and/or deployment.json file.`)
+      return
+    }
+
+    const Executor = new ExecutorClass(
       scriptGenerator.deployments,
       args.deploy,
       args.log
