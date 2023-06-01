@@ -167,10 +167,8 @@ export class ScriptGenerator {
     for (const deploymentJsonData of Object.values(
       this.stagedDeploymentConfigurations
     )) {
-      if (
-        this.deploy === false ||
-        deploymentJsonData['services'][this.getService()]['slug']
-      ) {
+      const service = deploymentJsonData['services'][this.getService()]
+      if (this.deploy === false || service !== undefined) {
         this.writeDeploymentJsonContext(deploymentJsonData)
         this.generateScripts(deploymentJsonData)
       }

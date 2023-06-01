@@ -48,8 +48,8 @@ export class Executor {
     }
   }
 
-  appendResult(error) {
-    if (error) {
+  appendResult(failure) {
+    if (failure) {
       if (this.deploy === false) {
         this.results += `Build Failed: ${
           this.deployments[this.deploymentIndex].location
@@ -98,7 +98,7 @@ export class Executor {
     if (
       this.scriptIndex === this.deployments[this.deploymentIndex].scripts.length
     ) {
-      this.appendResult(error)
+      this.appendResult(false)
       this.deploymentIndex += 1
       this.scriptIndex = 0
       return
@@ -107,7 +107,7 @@ export class Executor {
 
   handleFailure(stdout, stderr, error) {
     this.appendLogs(stdout, stderr, error)
-    this.appendResult(error)
+    this.appendResult(true)
     this.deploymentIndex += 1
     this.scriptIndex = 0
     this.httpCounter = 0
@@ -135,20 +135,26 @@ export class Executor {
       this.deployments[this.deploymentIndex].scripts[this.scriptIndex]
 
     exec(script, (error, stdout, stderr) => {
-      if (!error) {
-        // increase counters and continue
-        this.handleSuccess(stdout, stderr, null)
+      if (error) {
+        if (!this.isHTTPError(stderr) || !this.shouldRetry()) {
+          // append logs to `result` and continue with the next deployment
+          return this.handleFailure(stdout, stderr, error)
+        }
+
+        // here we know it is an http error. We can retry or skip it
+        // Increase http counter and retry
+        this.httpCounter += 1
         return this.executeNextScript()
       }
 
-      if (!this.isHTTPError(stderr) || !this.shouldRetry()) {
-        // append logs to `result` and continue with the next deployment
+      if (
+        stdout.toLowerCase().includes('uncaught exception') ||
+        stderr.toLowerCase().includes('uncaught exception')
+      ) {
         return this.handleFailure(stdout, stderr, error)
       }
 
-      // here we know it is an http error. We can retry or skip it
-      // Increse http counter and retry
-      this.httpCounter += 1
+      this.handleSuccess(stdout, stderr, null)
       return this.executeNextScript()
     })
   }
