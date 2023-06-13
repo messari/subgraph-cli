@@ -51,6 +51,8 @@ const networks = new Set([
   'osmo-test-4',
   'juno-1',
   'uni-3',
+  'metis',
+  'unsupported',
 ])
 
 function checkSchemaPresentAndValid(protocol, protocolData) {
