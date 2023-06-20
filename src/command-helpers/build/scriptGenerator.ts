@@ -290,13 +290,13 @@ export class ScriptGenerator {
         break
       case 'hosted-service':
         if (this.token) {
-          deploymentScript = `graph deploy --auth=${this.token} --product hosted-service ${location}`
+          deploymentScript = `graph deploy --deploy-key=${this.token} --product hosted-service ${location}`
         } else {
           deploymentScript = `graph deploy --product hosted-service ${location}`
         }
         break
       case 'cronos-portal':
-        deploymentScript = `graph deploy ${location} --access-token=${this.token} --node https://portal-api.cronoslabs.com/deploy --ipfs https://api.thegraph.com/ipfs --versionLabel=${version}`
+        deploymentScript = `graph deploy ${location} --deploy-key=${this.token} --node https://portal-api.cronoslabs.com/deploy --ipfs https://api.thegraph.com/ipfs --versionLabel=${version}`
         break
       default:
         throw new Error(
