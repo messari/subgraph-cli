@@ -38,6 +38,7 @@ const networks = new Set([
   'aurora',
   'aurora-testnet',
   'base-testnet',
+  'base',
   'zksync-era',
   'sepolia',
   'polygon-zkevm-testnet',
