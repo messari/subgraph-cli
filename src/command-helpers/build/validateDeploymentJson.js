@@ -77,6 +77,7 @@ function checkSchemaPresentAndValid(protocol, protocolData) {
       'bridge',
       'derivatives-perpfutures',
       'derivatives-options',
+      'non-standard',
     ].includes(protocolData.schema)
   ) {
     throw new Error(
