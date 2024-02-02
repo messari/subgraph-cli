@@ -3,6 +3,8 @@
 /// //////////////////////////////////////
 
 const networks = new Set([
+  'holesky',
+  'blast-testnet',
   'arweave-mainnet',
   'harmony',
   'cronos',
@@ -33,13 +35,18 @@ const networks = new Set([
   'arbitrum',
   'arbitrum-one',
   'arbitrum-goerli',
+  'arbitrum-sepolia',
   'optimism',
+  'optimism-sepolia',
   'optimism-goerli',
   'aurora',
   'aurora-testnet',
   'base-testnet',
   'base',
+  'base-sepolia',
   'zksync-era',
+  'zksync-era-testnet',
+  'zksync-era-sepolia',
   'sepolia',
   'polygon-zkevm-testnet',
   'polygon-zkevm',
