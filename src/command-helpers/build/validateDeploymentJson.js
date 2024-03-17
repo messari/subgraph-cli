@@ -60,6 +60,7 @@ const networks = new Set([
   'juno-1',
   'uni-3',
   'metis',
+  'scroll',
   'unsupported',
 ])
 
