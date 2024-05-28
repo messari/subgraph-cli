@@ -72,8 +72,12 @@ const networks = new Set([
   'sepolia',
   'theta-testnet-001',
   'uni-3',
-  'metis',
-  'scroll',
+  'xlayer-mainnet',
+  'xlayer-sepolia',
+  'zksync-era-sepolia',
+  'zksync-era-testnet',
+  'zksync-era',
+  'zkyoto-testnet',
   'unsupported',
 ])
 
