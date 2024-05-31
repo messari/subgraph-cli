@@ -5,6 +5,7 @@
 const networks = new Set([
   'holesky',
   'blast-testnet',
+  'blast-mainnet',
   'arweave-mainnet',
   'harmony',
   'cronos',
@@ -48,6 +49,9 @@ const networks = new Set([
   'zksync-era-testnet',
   'zksync-era-sepolia',
   'sepolia',
+  'linea',
+  'linea-goerli',
+  'linea-sepolia',
   'polygon-zkevm-testnet',
   'polygon-zkevm',
   'near-mainnet',
@@ -61,6 +65,8 @@ const networks = new Set([
   'uni-3',
   'metis',
   'scroll',
+  'xlayer-mainnet',
+  'xlayer-sepolia',
   'unsupported',
 ])
 
