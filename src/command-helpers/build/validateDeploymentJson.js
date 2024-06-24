@@ -30,6 +30,7 @@ const networks = new Set([
   'celo',
   'celo-alfajores',
   'fuse',
+  'mode-mainnet',
   'moonbeam',
   'moonriver',
   'mbase',
