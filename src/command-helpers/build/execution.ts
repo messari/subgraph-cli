@@ -77,7 +77,7 @@ export class Executor {
   printOutput() {
     fs.writeFile(
       'results.txt',
-      this.logs.replace(/\u00[^m]*?m/g, ''),
+      this.logs.replace(/\u001b[^m]*?m/g, ''),
       (err) => {
         if (err) throw new Error(err)
       }
