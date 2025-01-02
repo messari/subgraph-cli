@@ -68,6 +68,7 @@ const networks = new Set([
   'scroll',
   'xlayer-mainnet',
   'xlayer-sepolia',
+  'etherlink-mainnet',
   'unsupported',
 ])
 
