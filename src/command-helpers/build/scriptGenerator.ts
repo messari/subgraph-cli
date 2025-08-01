@@ -283,9 +283,9 @@ export class ScriptGenerator {
     switch (this.service) {
       case 'subgraph-studio':
         if (this.token) {
-          deploymentScript = `graph deploy ${location} --studio --deploy-key=${this.token} --version-label=${version}`
+          deploymentScript = `graph deploy ${location} --deploy-key=${this.token} --version-label=${version}`
         } else {
-          deploymentScript = `graph deploy ${location} --studio --version-label=${version}`
+          deploymentScript = `graph deploy ${location} --version-label=${version}`
         }
         break
       case 'hosted-service':
